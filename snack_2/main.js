@@ -19,7 +19,7 @@ const zucchine = [{
 }, {
     variety: 'napoletana',
     weight: 130,
-    lengthCm: 15
+    lengthCm: 14
 }, {
     variety: 'tonda',
     weight: 105,
@@ -31,7 +31,7 @@ const zucchine = [{
 }, {
     variety: 'siciliana',
     weight: 98,
-    lengthCm: 18
+    lengthCm: 14
 }, {
     variety: 'bianca',
     weight: 82,
@@ -46,14 +46,29 @@ const zucchine = [{
     lengthCm: 30
 }]
 
+// per ogni elemento destrutturo la key lengthCm per filtrarla utilizzando .filter
+
 // const over15 = zucchine.filter(function () {
 //     return zucchine.lengthCm > 15;
 // })
+const over15 = zucchine.filter(zucchina => zucchina.lengthCm > 15)
+console.log(over15);
 
-const { lengthCm } = zucchine;
-console.log(lengthCm);
-function isGreater() {
+const under15 = zucchine.filter(zucchina => zucchina.lengthCm < 15)
+console.log(under15);
 
-}
-// const over15 = zucchine.filter()
-// console.log(over15);
+let weightOver15 = 0;
+over15.forEach(zucchina => {
+    // console.log(zucchina)
+    weightOver15 += zucchina.weight
+});
+
+console.log(weightOver15);
+
+let weightUnder15 = 0;
+under15.forEach(zucchina => {
+    // console.log(zucchina)
+    weightUnder15 += zucchina.weight
+});
+
+console.log(weightUnder15);
